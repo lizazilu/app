@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<body>
+    <h1>Available Courses</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Section</th>
+                <th>Year</th>
+                <th>Start Date</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Credits</th>
+                <th>Days</th>
+                <th>Times</th>
+                <th>Registered</th>
+                <th>Waitlist</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course[0] }}</td>
+                <td>{{ course[1] }}</td>
+                <td>{{ course[2] }}</td>
+                <td>{{ course[3] }}</td>
+                <td>{{ course[4] }}</td>
+                <td>{{ course[5] }}</td>
+                <td>{{ course[6] }}</td>
+                <td>{{ course[7] }}</td>
+                <td>{{ course[8] }}</td>
+                <td>{{ course[9] }}</td>
+                <td>{{ course[10] }}</td>
+                <td>{{ course[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
