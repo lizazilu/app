@@ -1,9 +1,28 @@
 # app
 flask app 
-first step was done by creating the database on DBvear with the connected postgreSQL. the connection was done by creating RDS database on aws.
+{This project is a Flask-based web application that connects to a PostgreSQL database to manage and display a list of courses. The application fetches data from the database and presents it in a user-friendly web interface.}
 
+  1) Features
+   
+- Connects to a PostgreSQL database hosted on Amazon RDS.
+- Fetches and displays course data in a structured HTML table.
+- Logs application behavior for debugging and tracking.
+  
+  2) Technologies Used
+- **Backend:** Flask
+- **Database:** PostgreSQL
+- **Frontend:** HTML with Jinja2 templating
+- **Deployment:** Hosted on platform github
+  3)  Setup and Installation
 
-the database sql script:
+** Prerequisites**
+
+- Python (3.9 or later)
+- PostgreSQL
+- `psycopg2` library for PostgreSQL connection
+- Flask library
+
+4)Setup the database:
 CREATE TABLE courses (
     id SERIAL PRIMARY KEY,
     course_code VARCHAR(20),
@@ -20,8 +39,6 @@ CREATE TABLE courses (
     status VARCHAR(10)
 );
 
-
-Insert sample course data:
 INSERT INTO courses (course_code, section, year, start_date, title, location, credits, days, times, registered, waitlist, status)
 VALUES 
 ('ACCT 2025', '1T', 2025, '2025-01-13', 'Managerial Accounting', 'Webster Univ Tashkent, Uzbekistan', 3, 'W', '4:30 PM - 6:50 PM', 24, 0, 'Open'),
@@ -29,14 +46,16 @@ VALUES
 ('ACCT 2025', '5U', 2025, '2025-01-13', 'Managerial Accounting', 'Webster Univ Tashkent, Uzbekistan', 3, 'R', '9:00 AM - 11:20 AM', 24, 0, 'Open'),
 ('ACCT 2025', '8T', 2025, '2025-01-13', 'Managerial Accounting', 'Webster Univ Tashkent, Uzbekistan', 3, 'R', '2:00 PM - 4:20 PM', 24, 0, 'Open');
 
+5) Set environment variables for database connection:
 
-then i created the flask on pytcharm :
-from flask import Flask, jsonify, render_template
-import psycopg2
-import logging
-creted the index.html in templates
-installed libraries to connect database with python code:
-pip3 install flask psycopg2-binary
+Replace the placeholders with actual values in the code:
+DB_HOST = "your-database-endpoint"
+DB_NAME = "your-database-name"
+DB_USER = "your-username"
+DB_PASSWORD = "your-password"
+DB_PORT = "your-port"
 
+6) Run the application:
 
-
+ - python app.py
+Author Zlobina Elizaveta- Business Administration & Computer Science student
